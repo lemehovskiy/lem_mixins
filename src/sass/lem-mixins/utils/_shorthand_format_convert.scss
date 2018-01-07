@@ -1,0 +1,20 @@
+@function _shorthand_format_convert($values, $format) {
+  $output: null;
+
+  $a: nth($values, 1);
+  $b: if(length($values) < 2, $a, nth($values, 2));
+  $c: if(length($values) < 3, $a, nth($values, 3));
+  $d: if(length($values) < 2, $a, nth($values, if(length($values) < 4, 2, 4)));
+
+  @if $a == 0 { $a: 0; }
+  @if $b == 0 { $b: 0; }
+  @if $c == 0 { $c: 0; }
+  @if $d == 0 { $d: 0; }
+
+  @if $format == 1              { $output: $a;          }
+  @else if $format == 2         { $output: $a $b;       }
+  @else if $format == 3             { $output: $a $b $c;    }
+  @else                         { $output: $a $b $c $d; }
+
+  @return $output;
+}

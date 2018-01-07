@@ -1,0 +1,10 @@
+@function set_units($values, $unit: 'px'){
+
+  $output: '';
+
+  @each $value in $values {
+    $output: $output + ' ' +  $value + $unit
+  }
+
+  @return $output;
+}

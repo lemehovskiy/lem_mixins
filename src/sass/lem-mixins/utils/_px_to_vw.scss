@@ -1,0 +1,12 @@
+@function px_to_vw($values, $viewport) {
+
+  $output: '';
+
+  $vw-context: $viewport * 0.01;
+
+  @each $value in $values {
+    $output: $output + ' ' +  decimal-round($value / $vw-context, 3) + 'vw'
+  }
+
+  @return $output;
+}

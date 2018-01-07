@@ -1,0 +1,50 @@
+@mixin adaptive-property($property, $viewport-width-from, $viewport-width-to, $property-from, $property-to: null, $sticky: false) {
+
+  //convert to compact shorthand format
+  $property-from: _compact-shorthand($property-from);
+
+  @if ($property-to) {
+
+    //init output
+    $output: '';
+
+    //convert to compact shorthand format
+    $property-to: _compact-shorthand($property-to);
+
+    //convert to similar format
+    @if (length($property-to) > length($property-from)){
+      $property-from: _shorthand_format_convert($property-from, length($property-to))
+    }
+
+    @else if(length($property-from) > length($property-to)){
+      $property-to: _shorthand_format_convert($property-to, length($property-from))
+    }
+
+    //get viewport distance
+    $viewport_distance: $viewport-width-from - $viewport-width-to;
+
+    @for $i from 1 through length($property-to) {
+      //get padding distance
+      $distance: nth($property-from, $i) - nth($property-to, $i);
+      $output: $output + ' ' + calc(#{$distance} * ((100vw - #{$viewport-width-to}px) / #{$viewport_distance}) + #{nth($property-to, $i)}px)
+    };
+
+
+    @if ($viewport-width-to) {
+      @media (max-width: ($viewport-width-from * 1px)) and (min-width: ($viewport-width-to + 1px)) {
+        #{$property}: #{$output}
+      }
+
+      @if ($sticky == true) {
+        @media (max-width: $viewport-width-to * 1px) {
+          #{$property}: #{set_units($property-to)}
+        }
+      }
+    }
+  }
+  @else {
+    @media (max-width: ($viewport-width-from * 1px)) {
+      #{$property}: #{px_to_vw($property-from, $viewport-width-from)}
+    }
+  }
+}
