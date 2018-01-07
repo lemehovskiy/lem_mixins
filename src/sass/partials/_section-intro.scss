@@ -26,5 +26,6 @@
     padding: 100px 50px;
     @include adaptive-padding(1200, 700, 100 50, 30 20, true);
     @include adaptive-font-size(1200, 700, 50, 20, true);
+
   }
 }
