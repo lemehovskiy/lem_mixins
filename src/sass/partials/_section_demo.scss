@@ -1,4 +1,4 @@
-.section-intro {
+.section-demo {
   position: relative;
   min-height: 100vh;
   display: flex;
@@ -22,10 +22,26 @@
     text-transform: uppercase;
     font-weight: 600;
     background: #78ca78;
-
     padding: 100px 50px;
-    @include adaptive-padding(1200, 700, 100 50, 30 20, true);
-    @include adaptive-font-size(1200, 700, 50, 20, true);
+  }
 
+
+
+  &.demo-1 {
+    .title {
+      @include adaptive-padding(1200, 700, 100 50, 30 20, true);
+      @include adaptive-font-size(1200, 700, 50, 20, true);
+    }
+  }
+
+
+  &.demo-2 {
+    .title {
+      width: 500px;
+      height: 500px;
+
+      @include adaptive-height(1200, 700, 500, 300, true);
+      @include adaptive-width(1200, 700, 500, 300, true);
+    }
   }
 }

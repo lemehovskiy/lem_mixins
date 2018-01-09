@@ -1,4 +1,4 @@
-@mixin adaptive-property($property, $viewport-width-from, $viewport-width-to, $property-from, $property-to: null, $sticky: false) {
+@mixin _adaptive-property($property, $viewport-width-from, $viewport-width-to, $property-from, $property-to: null, $sticky: false) {
 
   //convert to compact shorthand format
   $property-from: _compact-shorthand($property-from);

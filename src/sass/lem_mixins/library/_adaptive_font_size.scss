@@ -1,5 +1,5 @@
 @mixin adaptive-font-size($viewport-width-from, $viewport-width-to, $font-size-from, $font-size-to: null, $sticky: false) {
 
-  @include adaptive-property('font-size', $viewport-width-from, $viewport-width-to, $font-size-from, $font-size-to, $sticky)
+  @include _adaptive-property('font-size', $viewport-width-from, $viewport-width-to, $font-size-from, $font-size-to, $sticky)
 
 }

@@ -1,0 +1,5 @@
+@mixin adaptive-margin($viewport-width-from, $viewport-width-to, $margin-from, $margin-to: null, $sticky: false) {
+
+  @include _adaptive-property('margin', $viewport-width-from, $viewport-width-to, $margin-from, $margin-to, $sticky)
+
+}
