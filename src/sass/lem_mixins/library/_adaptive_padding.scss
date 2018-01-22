@@ -1,5 +1,5 @@
 @mixin adaptive-padding($viewport-width-from, $viewport-width-to, $font-size-from, $font-size-to: null, $sticky: false) {
 
-  @include _adaptive-property('padding', $viewport-width-from, $viewport-width-to, $font-size-from, $font-size-to, $sticky)
+  @include adaptive-property('padding', $viewport-width-from, $viewport-width-to, $font-size-from, $font-size-to, $sticky)
 
 }

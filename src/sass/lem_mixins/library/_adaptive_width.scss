@@ -1,5 +1,5 @@
 @mixin adaptive-width($viewport-width-from, $viewport-width-to, $width-from, $width-to: null, $sticky: false) {
 
-  @include _adaptive-property('width', $viewport-width-from, $viewport-width-to, $width-from, $width-to, $sticky)
+  @include adaptive-property('width', $viewport-width-from, $viewport-width-to, $width-from, $width-to, $sticky)
 
 }

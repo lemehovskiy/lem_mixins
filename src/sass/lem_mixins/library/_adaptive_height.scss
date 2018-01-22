@@ -1,5 +1,5 @@
 @mixin adaptive-height($viewport-width-from, $viewport-width-to, $height-from, $height-to: null, $sticky: false) {
 
-  @include _adaptive-property('height', $viewport-width-from, $viewport-width-to, $height-from, $height-to, $sticky)
+  @include adaptive-property('height', $viewport-width-from, $viewport-width-to, $height-from, $height-to, $sticky)
 
 }

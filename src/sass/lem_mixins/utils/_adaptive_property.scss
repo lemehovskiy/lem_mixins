@@ -29,10 +29,10 @@
 
       //check if property from equal property to
       @if (nth($property-from, $i) == nth($property-to, $i)) {
-        $output: $output + ' ' nth($property-to, $i)
+        $output: $output + nth($property-to, $i) + ' '
       }
       @else {
-        $output: $output + ' ' + calc(#{$distance} * ((100vw - #{$viewport-width-to}px) / #{$viewport_distance}) + #{nth($property-to, $i)}px)
+        $output: $output + calc(#{$distance} * ((100vw - #{$viewport-width-to}px) / #{$viewport_distance}) + #{nth($property-to, $i)}px) + ' '
       }
     };
 
