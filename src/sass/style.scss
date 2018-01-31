@@ -2,7 +2,7 @@
 
 @import "_reset.scss";
 
-@import "lem-mixins/lem-mixins";
+@import "lem_mixins/lem_mixins";
 
 body {
   font-family: 'Roboto', sans-serif;
@@ -38,6 +38,4 @@ section {
   }
 }
 
-
-@import "partials/section-intro";
-@import "partials/section-features-list";
+@import "partials/section_demo";
