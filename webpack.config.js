@@ -1,5 +1,4 @@
 const autoprefixer = require('autoprefixer');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 const NODE_ENV = process.env.NODE_ENV || "development";
 const webpack = require('webpack');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
@@ -8,11 +7,11 @@ module.exports = {
 
     watch: true,
 
-    entry: './src/entry.js',
+    entry: './test/src/entry.js',
 
     output: {
         path: __dirname,
-        filename: 'build/bundle.js'
+        filename: 'test/bundle.js'
     },
 
 
@@ -20,12 +19,7 @@ module.exports = {
         new webpack.DefinePlugin({
             NODE_ENV: JSON.stringify(NODE_ENV)
         }),
-        new ExtractTextPlugin("build/styles.css"),
-
-        new HtmlWebpackPlugin({
-            template: 'src/html/pages/index.pug',
-            filename: 'index.html'
-        })
+        new ExtractTextPlugin("test/style.css")
     ],
 
     module: {
@@ -64,17 +58,10 @@ module.exports = {
                             }
                         },
                         {
-                            loader: 'sass-loader',
+                            loader: 'sass-loader'
                         }
                     ]
                 })
-            },
-            {
-                test: /\.pug$/,
-                loader: 'pug-loader',
-                options: {
-                    pretty: true
-                }
             }
         ]
     }
